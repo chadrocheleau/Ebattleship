@@ -7,6 +7,8 @@ public class GameBattleship {
 		Player player = new Player("chad");
 		
 		//here are some new changes
+		
+		//how about these changes
 	}
 
 }
