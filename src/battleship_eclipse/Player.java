@@ -57,7 +57,7 @@ public class Player {
      * Will be choosing coordinates for ship placement setting up fleet's position
      * @param in takes Scanner object for use in input collection
      */
-    public void setUpFleet(Scanner in) {
+    public void setUpFleet() {
         /*
         todo need to set up mechanism for getting ship coordinates
         validating the input and then checking that ship placement is valid
@@ -78,11 +78,7 @@ public class Player {
         /*
         todo make exception to handle when the input doesn't match the regex "[A-J]([1-9]|10)"
          */
-        String playerInput = in.useDelimiter("[A-J]([1-9]|10)").nextLine();
-        for(int i = 0; i < 5; i++){
-            System.out.println(this.fleet[i].getShipClass());
-            System.out.println(this.fleet[i].getShipLength());
-        }
+        
 
     }
 
@@ -90,7 +86,7 @@ public class Player {
      * Mechanism for taking shots against opponents fleet
      * @param in Scanner object to be used for user input
      */
-    public boolean fireShot(Scanner in) {
+    public boolean fireShot() {
          /*
         todo need to set up mechanism for taking shot input
         validating the input and then checking that ship placement is valid
@@ -105,30 +101,30 @@ public class Player {
     }
 
     public static void playBattleship() {
-        Scanner in = new Scanner(System.in);
+        
         Player player1;
         Player player2;
 
         //Get player names
 
-        System.out.print("Player 1, Enter your name: ");
-        player1 = new Player(in.nextLine());
-        System.out.print("Player 2, Enter your name: ");
-        player2 = new Player(in.nextLine());
+     
+        player1 = new Player(UserInput.inputString("Player 1, Enter your name: "));
+        
+        player2 = new Player(UserInput.inputString("Player 2, Enter your name: "));
 
         player1.fleetPosition.displayField();
 
         //player 1 setUpFleet
-        player1.setUpFleet(in);
+        //player1.setUpFleet();
 
         //player 2 setUpFleet
-        player2.setUpFleet(in);
+        //player2.setUpFleet();
 
         //game loop
         System.out.println(player1.name);
         System.out.println(player2.name);
         //will be done with scanner here
-        in.close();
+        
     }
 
 	public String getName() {
