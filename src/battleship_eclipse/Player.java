@@ -130,4 +130,25 @@ public class Player {
         //will be done with scanner here
         in.close();
     }
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+
+	public Ship[] getFleet() {
+		return fleet;
+	}
+
+	public void setFleet(Ship[] fleet) {
+		this.fleet = fleet;
+	}
+
+	public GameBoard getFleetPosition() {
+		return fleetPosition;
+	}
+
+	public void setFleetPosition(GameBoard fleetPosition) {
+		this.fleetPosition = fleetPosition;
+	}
 }
